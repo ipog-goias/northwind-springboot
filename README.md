@@ -61,3 +61,6 @@ SPRING_BANNER_CHARSET=UTF-8;SPRING_BANNER_LOCATION=classpath:/banner.txt;SPRING_
 ![Alt text](./src/main/resources/doc/image/config02.png)
 #### Inserindo as variáveis de sistema
 ![Alt text](./src/main/resources/doc/image/config03.png)
+
+## Integração entre as camadas de Resource, Service e Repository
+![Alt text](./src/main/resources/doc/image/ipog-back-end-2-2024-1-03-springboot-em-camadas.drawio.png)
