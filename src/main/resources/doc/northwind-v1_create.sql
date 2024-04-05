@@ -1,557 +1,558 @@
--- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2024-04-04 21:51:17.94
+-- CREATED BY VERTABELO (HTTP://VERTABELO.COM)
+-- LAST MODIFICATION DATE: 2024-04-04 21:51:17.94
 
--- tables
--- Table: addresses
-CREATE TABLE addresses (
-    id int  NOT NULL,
-    contacts_id int  NOT NULL,
-    info varchar(250)  NOT NULL,
-    city varchar(150)  NOT NULL,
-    region varchar(150)  NOT NULL,
-    postal_code varchar(20)  NOT NULL,
-    country varchar(100)  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT addresses_pk PRIMARY KEY (id)
+-- TABLES
+-- TABLE: ADDRESSES
+CREATE TABLE ADDRESSES (
+    ID INT  NOT NULL,
+    CONTACTS_ID INT  NOT NULL,
+    INFO VARCHAR(250)  NOT NULL,
+    CITY VARCHAR(150)  NOT NULL,
+    REGION VARCHAR(150)  NOT NULL,
+    POSTAL_CODE VARCHAR(20)  NOT NULL,
+    COUNTRY VARCHAR(100)  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT ADDRESSES_PK PRIMARY KEY (ID)
 );
 
--- Table: categories
-CREATE TABLE categories (
-    id int  NOT NULL,
-    name varchar(100)  NOT NULL,
-    description text  NOT NULL,
-    picture bytea  NOT NULL,
-    CONSTRAINT categories_pk PRIMARY KEY (id)
+-- TABLE: CATEGORIES
+CREATE TABLE CATEGORIES (
+    ID INT  NOT NULL,
+    NAME VARCHAR(100)  NOT NULL,
+    DESCRIPTION TEXT  NOT NULL,
+    PICTURE BYTEA  NOT NULL,
+    CONSTRAINT CATEGORIES_PK PRIMARY KEY (ID)
 );
 
--- Table: contacts
-CREATE TABLE contacts (
-    id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT contacts_pk PRIMARY KEY (id)
+-- TABLE: CONTACTS
+CREATE TABLE CONTACTS (
+    ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT CONTACTS_PK PRIMARY KEY (ID)
 );
 
--- Table: customers
-CREATE TABLE customers (
-    id int  NOT NULL,
-    name varchar(150)  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT customers_pk PRIMARY KEY (id)
+-- TABLE: CUSTOMERS
+CREATE TABLE CUSTOMERS (
+    ID INT  NOT NULL,
+    NAME VARCHAR(150)  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT CUSTOMERS_PK PRIMARY KEY (ID)
 );
 
--- Table: customers_contacts
-CREATE TABLE customers_contacts (
-    id int  NOT NULL,
-    customers_id int  NOT NULL,
-    contacts_id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT customers_contacts_pk PRIMARY KEY (id)
+-- TABLE: CUSTOMERS_CONTACTS
+CREATE TABLE CUSTOMERS_CONTACTS (
+    ID INT  NOT NULL,
+    CUSTOMERS_ID INT  NOT NULL,
+    CONTACTS_ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT CUSTOMERS_CONTACTS_PK PRIMARY KEY (ID)
 );
 
--- Table: demograhpics
-CREATE TABLE demograhpics (
-    id int  NOT NULL,
-    long decimal(12,8)  NOT NULL,
-    lat decimal(12,8)  NOT NULL,
-    description varchar(150)  NULL,
-    contacts_id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT demograhpics_pk PRIMARY KEY (id)
+-- TABLE: DEMOGRAHPICS
+CREATE TABLE DEMOGRAHPICS (
+    ID INT  NOT NULL,
+    LONG DECIMAL(12,8)  NOT NULL,
+    LAT DECIMAL(12,8)  NOT NULL,
+    DESCRIPTION VARCHAR(150)  NULL,
+    CONTACTS_ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT DEMOGRAHPICS_PK PRIMARY KEY (ID)
 );
 
--- Table: emails
-CREATE TABLE emails (
-    id int  NOT NULL,
-    contacts_id int  NOT NULL,
-    address varchar(100)  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT emails_pk PRIMARY KEY (id)
+-- TABLE: EMAILS
+CREATE TABLE EMAILS (
+    ID INT  NOT NULL,
+    CONTACTS_ID INT  NOT NULL,
+    ADDRESS VARCHAR(100)  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT EMAILS_PK PRIMARY KEY (ID)
 );
 
--- Table: employees
-CREATE TABLE employees (
-    id int  NOT NULL,
-    employees_id int  NULL,
-    hire_date date  NOT NULL,
-    resignation_date date  NOT NULL,
-    CONSTRAINT employees_pk PRIMARY KEY (id)
+-- TABLE: EMPLOYEES
+CREATE TABLE EMPLOYEES (
+    ID INT  NOT NULL,
+    EMPLOYEES_ID INT  NULL,
+    HIRE_DATE DATE  NOT NULL,
+    RESIGNATION_DATE DATE  NOT NULL,
+    CONSTRAINT EMPLOYEES_PK PRIMARY KEY (ID)
 );
 
--- Table: employees_contacts
-CREATE TABLE employees_contacts (
-    id int  NOT NULL,
-    employees_id int  NOT NULL,
-    contacts_id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT employees_contacts_pk PRIMARY KEY (id)
+-- TABLE: EMPLOYEES_CONTACTS
+CREATE TABLE EMPLOYEES_CONTACTS (
+    ID INT  NOT NULL,
+    EMPLOYEES_ID INT  NOT NULL,
+    CONTACTS_ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT EMPLOYEES_CONTACTS_PK PRIMARY KEY (ID)
 );
 
--- Table: employees_details
-CREATE TABLE employees_details (
-    id int  NOT NULL,
-    first_name varchar(150)  NOT NULL,
-    last_name varchar(150)  NULL,
-    title varchar(100)  NULL,
-    title_of_courtesy varchar(100)  NULL,
-    brith_date int  NOT NULL,
-    employees_id int  NOT NULL,
-    notes text  NULL,
-    CONSTRAINT employees_details_pk PRIMARY KEY (id)
+-- TABLE: EMPLOYEES_DETAILS
+CREATE TABLE EMPLOYEES_DETAILS (
+    ID INT  NOT NULL,
+    FIRST_NAME VARCHAR(150)  NOT NULL,
+    LAST_NAME VARCHAR(150)  NULL,
+    TITLE VARCHAR(100)  NULL,
+    TITLE_OF_COURTESY VARCHAR(100)  NULL,
+    BRITH_DATE INT  NOT NULL,
+    EMPLOYEES_ID INT  NOT NULL,
+    NOTES TEXT  NULL,
+    CONSTRAINT EMPLOYEES_DETAILS_PK PRIMARY KEY (ID)
 );
 
--- Table: orders
-CREATE TABLE orders (
-    id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT orders_pk PRIMARY KEY (id)
+-- TABLE: ORDERS
+CREATE TABLE ORDERS (
+    ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT ORDERS_PK PRIMARY KEY (ID)
 );
 
--- Table: orders_contacts
-CREATE TABLE orders_contacts (
-    id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    orders_id int  NOT NULL,
-    contacts_id int  NOT NULL,
-    CONSTRAINT orders_contacts_pk PRIMARY KEY (id)
+-- TABLE: ORDERS_CONTACTS
+CREATE TABLE ORDERS_CONTACTS (
+    ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    ORDERS_ID INT  NOT NULL,
+    CONTACTS_ID INT  NOT NULL,
+    CONSTRAINT ORDERS_CONTACTS_PK PRIMARY KEY (ID)
 );
 
--- Table: orders_customers
-CREATE TABLE orders_customers (
-    id int  NOT NULL,
-    customers_id int  NOT NULL,
-    orders_id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT orders_customers_pk PRIMARY KEY (id)
+-- TABLE: ORDERS_CUSTOMERS
+CREATE TABLE ORDERS_CUSTOMERS (
+    ID INT  NOT NULL,
+    CUSTOMERS_ID INT  NOT NULL,
+    ORDERS_ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT ORDERS_CUSTOMERS_PK PRIMARY KEY (ID)
 );
 
--- Table: orders_details
-CREATE TABLE orders_details (
-    id int  NOT NULL,
-    unit_price decimal(12,2)  NOT NULL,
-    quantity int  NOT NULL,
-    discount decimal(12,2)  NOT NULL,
-    orders_id int  NOT NULL,
-    products_id int  NOT NULL,
-    CONSTRAINT orders_details_pk PRIMARY KEY (id)
+-- TABLE: ORDERS_DETAILS
+CREATE TABLE ORDERS_DETAILS (
+    ID INT  NOT NULL,
+    UNIT_PRICE DECIMAL(12,2)  NOT NULL,
+    QUANTITY INT  NOT NULL,
+    DISCOUNT DECIMAL(12,2)  NOT NULL,
+    ORDERS_ID INT  NOT NULL,
+    PRODUCTS_ID INT  NOT NULL,
+    CONSTRAINT ORDERS_DETAILS_PK PRIMARY KEY (ID)
 );
 
--- Table: orders_employees
-CREATE TABLE orders_employees (
-    id int  NOT NULL,
-    orders_id int  NOT NULL,
-    employees_id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT orders_employees_pk PRIMARY KEY (id)
+-- TABLE: ORDERS_EMPLOYEES
+CREATE TABLE ORDERS_EMPLOYEES (
+    ID INT  NOT NULL,
+    ORDERS_ID INT  NOT NULL,
+    EMPLOYEES_ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT ORDERS_EMPLOYEES_PK PRIMARY KEY (ID)
 );
 
--- Table: orders_shippers
-CREATE TABLE orders_shippers (
-    id int  NOT NULL,
-    shippers_id int  NOT NULL,
-    orders_id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT orders_shippers_pk PRIMARY KEY (id)
+-- TABLE: ORDERS_SHIPPERS
+CREATE TABLE ORDERS_SHIPPERS (
+    ID INT  NOT NULL,
+    SHIPPERS_ID INT  NOT NULL,
+    ORDERS_ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT ORDERS_SHIPPERS_PK PRIMARY KEY (ID)
 );
 
--- Table: phones
-CREATE TABLE phones (
-    id int  NOT NULL,
-    contacts_id int  NOT NULL,
-    number varchar(20)  NOT NULL,
-    date_register date  NOT NULL,
-    closer_register date  NULL,
-    CONSTRAINT phones_pk PRIMARY KEY (id)
+-- TABLE: PHONES
+CREATE TABLE PHONES (
+    ID INT  NOT NULL,
+    CONTACTS_ID INT  NOT NULL,
+    NUMBER VARCHAR(20)  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSER_REGISTER DATE  NULL,
+    CONSTRAINT PHONES_PK PRIMARY KEY (ID)
 );
 
--- Table: pictures
-CREATE TABLE pictures (
-    id int  NOT NULL,
-    path text  NOT NULL,
-    CONSTRAINT pictures_pk PRIMARY KEY (id)
+-- TABLE: PICTURES
+CREATE TABLE PICTURES (
+    ID INT  NOT NULL,
+    PATH TEXT  NOT NULL,
+    CONSTRAINT PICTURES_PK PRIMARY KEY (ID)
 );
 
--- Table: pictures_categories
-CREATE TABLE pictures_categories (
-    id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    categories_id int  NOT NULL,
-    pictures_id int  NOT NULL,
-    CONSTRAINT pictures_categories_pk PRIMARY KEY (id)
+-- TABLE: PICTURES_CATEGORIES
+CREATE TABLE PICTURES_CATEGORIES (
+    ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CATEGORIES_ID INT  NOT NULL,
+    PICTURES_ID INT  NOT NULL,
+    CONSTRAINT PICTURES_CATEGORIES_PK PRIMARY KEY (ID)
 );
 
--- Table: pictures_employees
-CREATE TABLE pictures_employees (
-    id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NOT NULL,
-    pictures_id int  NOT NULL,
-    employees_id int  NOT NULL,
-    CONSTRAINT pictures_employees_pk PRIMARY KEY (id)
+-- TABLE: PICTURES_EMPLOYEES
+CREATE TABLE PICTURES_EMPLOYEES (
+    ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NOT NULL,
+    PICTURES_ID INT  NOT NULL,
+    EMPLOYEES_ID INT  NOT NULL,
+    CONSTRAINT PICTURES_EMPLOYEES_PK PRIMARY KEY (ID)
 );
 
--- Table: pictures_products
-CREATE TABLE pictures_products (
-    id int  NOT NULL,
-    products_id int  NOT NULL,
-    pictures_id int  NOT NULL,
-    date_regsiter date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT pictures_products_pk PRIMARY KEY (id)
+-- TABLE: PICTURES_PRODUCTS
+CREATE TABLE PICTURES_PRODUCTS (
+    ID INT  NOT NULL,
+    PRODUCTS_ID INT  NOT NULL,
+    PICTURES_ID INT  NOT NULL,
+    DATE_REGSITER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT PICTURES_PRODUCTS_PK PRIMARY KEY (ID)
 );
 
--- Table: products
-CREATE TABLE products (
-    id int  NOT NULL,
-    categories_id int  NOT NULL,
-    suppliers_id int  NOT NULL,
-    name varchar(150)  NOT NULL,
-    CONSTRAINT products_pk PRIMARY KEY (id)
+-- TABLE: PRODUCTS
+CREATE TABLE PRODUCTS (
+    ID INT  NOT NULL,
+    CATEGORIES_ID INT  NOT NULL,
+    SUPPLIERS_ID INT  NOT NULL,
+    NAME VARCHAR(150)  NOT NULL,
+    CONSTRAINT PRODUCTS_PK PRIMARY KEY (ID)
 );
 
--- Table: shippers
-CREATE TABLE shippers (
-    id int  NOT NULL,
-    name varchar(150)  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT shippers_pk PRIMARY KEY (id)
+-- TABLE: SHIPPERS
+CREATE TABLE SHIPPERS (
+    ID INT  NOT NULL,
+    NAME VARCHAR(150)  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT SHIPPERS_PK PRIMARY KEY (ID)
 );
 
--- Table: shippers_contacts
-CREATE TABLE shippers_contacts (
-    id int  NOT NULL,
-    shippers_id int  NOT NULL,
-    contacts_id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT shippers_contacts_pk PRIMARY KEY (id)
+-- TABLE: SHIPPERS_CONTACTS
+CREATE TABLE SHIPPERS_CONTACTS (
+    ID INT  NOT NULL,
+    SHIPPERS_ID INT  NOT NULL,
+    CONTACTS_ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT SHIPPERS_CONTACTS_PK PRIMARY KEY (ID)
 );
 
--- Table: stock
-CREATE TABLE stock (
-    id int  NOT NULL,
-    quantity int  NOT NULL,
-    quantity_per_unit int  NOT NULL,
-    reorder_level smallint  NOT NULL,
-    stock_address varchar(150)  NOT NULL,
-    CONSTRAINT stock_pk PRIMARY KEY (id)
+-- TABLE: STOCK
+CREATE TABLE STOCK (
+    ID INT  NOT NULL,
+    QUANTITY INT  NOT NULL,
+    QUANTITY_PER_UNIT INT  NOT NULL,
+    REORDER_LEVEL SMALLINT  NOT NULL,
+    STOCK_ADDRESS VARCHAR(150)  NOT NULL,
+    CONSTRAINT STOCK_PK PRIMARY KEY (ID)
 );
 
--- Table: stock_details
-CREATE TABLE stock_details (
-    id int  NOT NULL,
-    products_id int  NOT NULL,
-    stock_id int  NOT NULL,
-    unit_price decimal(12,2)  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT stock_details_pk PRIMARY KEY (id)
+-- TABLE: STOCK_DETAILS
+CREATE TABLE STOCK_DETAILS (
+    ID INT  NOT NULL,
+    PRODUCTS_ID INT  NOT NULL,
+    STOCK_ID INT  NOT NULL,
+    UNIT_PRICE DECIMAL(12,2)  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT STOCK_DETAILS_PK PRIMARY KEY (ID)
 );
 
--- Table: suppliers
-CREATE TABLE suppliers (
-    id int  NOT NULL,
-    name varchar(150)  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT suppliers_pk PRIMARY KEY (id)
+-- TABLE: SUPPLIERS
+CREATE TABLE SUPPLIERS (
+    ID INT  NOT NULL,
+    NAME VARCHAR(150)  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT SUPPLIERS_PK PRIMARY KEY (ID)
 );
 
--- Table: suppliers_contacts
-CREATE TABLE suppliers_contacts (
-    id int  NOT NULL,
-    suppliers_id int  NOT NULL,
-    contacts_id int  NOT NULL,
-    date_register date  NOT NULL,
-    close_register date  NULL,
-    CONSTRAINT suppliers_contacts_pk PRIMARY KEY (id)
+-- TABLE: SUPPLIERS_CONTACTS
+CREATE TABLE SUPPLIERS_CONTACTS (
+    ID INT  NOT NULL,
+    SUPPLIERS_ID INT  NOT NULL,
+    CONTACTS_ID INT  NOT NULL,
+    DATE_REGISTER DATE  NOT NULL,
+    CLOSE_REGISTER DATE  NULL,
+    CONSTRAINT SUPPLIERS_CONTACTS_PK PRIMARY KEY (ID)
 );
 
--- foreign keys
--- Reference: addresses_contacts (table: addresses)
-ALTER TABLE addresses ADD CONSTRAINT addresses_contacts
-    FOREIGN KEY (contacts_id)
-    REFERENCES contacts (id)  
+-- FOREIGN KEYS
+-- REFERENCE: ADDRESSES_CONTACTS (TABLE: ADDRESSES)
+ALTER TABLE ADDRESSES ADD CONSTRAINT ADDRESSES_CONTACTS
+    FOREIGN KEY (CONTACTS_ID)
+    REFERENCES CONTACTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: customers_contacts_contacts (table: customers_contacts)
-ALTER TABLE customers_contacts ADD CONSTRAINT customers_contacts_contacts
-    FOREIGN KEY (contacts_id)
-    REFERENCES contacts (id)  
+-- REFERENCE: CUSTOMERS_CONTACTS_CONTACTS (TABLE: CUSTOMERS_CONTACTS)
+ALTER TABLE CUSTOMERS_CONTACTS ADD CONSTRAINT CUSTOMERS_CONTACTS_CONTACTS
+    FOREIGN KEY (CONTACTS_ID)
+    REFERENCES CONTACTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: customers_contacts_customers (table: customers_contacts)
-ALTER TABLE customers_contacts ADD CONSTRAINT customers_contacts_customers
-    FOREIGN KEY (customers_id)
-    REFERENCES customers (id)  
+-- REFERENCE: CUSTOMERS_CONTACTS_CUSTOMERS (TABLE: CUSTOMERS_CONTACTS)
+ALTER TABLE CUSTOMERS_CONTACTS ADD CONSTRAINT CUSTOMERS_CONTACTS_CUSTOMERS
+    FOREIGN KEY (CUSTOMERS_ID)
+    REFERENCES CUSTOMERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: demograhpics_contacts (table: demograhpics)
-ALTER TABLE demograhpics ADD CONSTRAINT demograhpics_contacts
-    FOREIGN KEY (contacts_id)
-    REFERENCES contacts (id)  
+-- REFERENCE: DEMOGRAHPICS_CONTACTS (TABLE: DEMOGRAHPICS)
+ALTER TABLE DEMOGRAHPICS ADD CONSTRAINT DEMOGRAHPICS_CONTACTS
+    FOREIGN KEY (CONTACTS_ID)
+    REFERENCES CONTACTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: emails_contacts (table: emails)
-ALTER TABLE emails ADD CONSTRAINT emails_contacts
-    FOREIGN KEY (contacts_id)
-    REFERENCES contacts (id)  
+-- REFERENCE: EMAILS_CONTACTS (TABLE: EMAILS)
+ALTER TABLE EMAILS ADD CONSTRAINT EMAILS_CONTACTS
+    FOREIGN KEY (CONTACTS_ID)
+    REFERENCES CONTACTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: employees_contacts_contacts (table: employees_contacts)
-ALTER TABLE employees_contacts ADD CONSTRAINT employees_contacts_contacts
-    FOREIGN KEY (contacts_id)
-    REFERENCES contacts (id)  
+-- REFERENCE: EMPLOYEES_CONTACTS_CONTACTS (TABLE: EMPLOYEES_CONTACTS)
+ALTER TABLE EMPLOYEES_CONTACTS ADD CONSTRAINT EMPLOYEES_CONTACTS_CONTACTS
+    FOREIGN KEY (CONTACTS_ID)
+    REFERENCES CONTACTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: employees_contacts_employees (table: employees_contacts)
-ALTER TABLE employees_contacts ADD CONSTRAINT employees_contacts_employees
-    FOREIGN KEY (employees_id)
-    REFERENCES employees (id)  
+-- REFERENCE: EMPLOYEES_CONTACTS_EMPLOYEES (TABLE: EMPLOYEES_CONTACTS)
+ALTER TABLE EMPLOYEES_CONTACTS ADD CONSTRAINT EMPLOYEES_CONTACTS_EMPLOYEES
+    FOREIGN KEY (EMPLOYEES_ID)
+    REFERENCES EMPLOYEES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: employees_details_employees (table: employees_details)
-ALTER TABLE employees_details ADD CONSTRAINT employees_details_employees
-    FOREIGN KEY (employees_id)
-    REFERENCES employees (id)  
+-- REFERENCE: EMPLOYEES_DETAILS_EMPLOYEES (TABLE: EMPLOYEES_DETAILS)
+ALTER TABLE EMPLOYEES_DETAILS ADD CONSTRAINT EMPLOYEES_DETAILS_EMPLOYEES
+    FOREIGN KEY (EMPLOYEES_ID)
+    REFERENCES EMPLOYEES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: employees_employees (table: employees)
-ALTER TABLE employees ADD CONSTRAINT employees_employees
-    FOREIGN KEY (employees_id)
-    REFERENCES employees (id)  
+-- REFERENCE: EMPLOYEES_EMPLOYEES (TABLE: EMPLOYEES)
+ALTER TABLE EMPLOYEES ADD CONSTRAINT EMPLOYEES_EMPLOYEES
+    FOREIGN KEY (EMPLOYEES_ID)
+    REFERENCES EMPLOYEES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_contacts_contacts (table: orders_contacts)
-ALTER TABLE orders_contacts ADD CONSTRAINT orders_contacts_contacts
-    FOREIGN KEY (contacts_id)
-    REFERENCES contacts (id)  
+-- REFERENCE: ORDERS_CONTACTS_CONTACTS (TABLE: ORDERS_CONTACTS)
+ALTER TABLE ORDERS_CONTACTS ADD CONSTRAINT ORDERS_CONTACTS_CONTACTS
+    FOREIGN KEY (CONTACTS_ID)
+    REFERENCES CONTACTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_contacts_orders (table: orders_contacts)
-ALTER TABLE orders_contacts ADD CONSTRAINT orders_contacts_orders
-    FOREIGN KEY (orders_id)
-    REFERENCES orders (id)  
+-- REFERENCE: ORDERS_CONTACTS_ORDERS (TABLE: ORDERS_CONTACTS)
+ALTER TABLE ORDERS_CONTACTS ADD CONSTRAINT ORDERS_CONTACTS_ORDERS
+    FOREIGN KEY (ORDERS_ID)
+    REFERENCES ORDERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_customers_customers (table: orders_customers)
-ALTER TABLE orders_customers ADD CONSTRAINT orders_customers_customers
-    FOREIGN KEY (customers_id)
-    REFERENCES customers (id)  
+-- REFERENCE: ORDERS_CUSTOMERS_CUSTOMERS (TABLE: ORDERS_CUSTOMERS)
+ALTER TABLE ORDERS_CUSTOMERS ADD CONSTRAINT ORDERS_CUSTOMERS_CUSTOMERS
+    FOREIGN KEY (CUSTOMERS_ID)
+    REFERENCES CUSTOMERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_customers_orders (table: orders_customers)
-ALTER TABLE orders_customers ADD CONSTRAINT orders_customers_orders
-    FOREIGN KEY (orders_id)
-    REFERENCES orders (id)  
+-- REFERENCE: ORDERS_CUSTOMERS_ORDERS (TABLE: ORDERS_CUSTOMERS)
+ALTER TABLE ORDERS_CUSTOMERS ADD CONSTRAINT ORDERS_CUSTOMERS_ORDERS
+    FOREIGN KEY (ORDERS_ID)
+    REFERENCES ORDERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_details_orders (table: orders_details)
-ALTER TABLE orders_details ADD CONSTRAINT orders_details_orders
-    FOREIGN KEY (orders_id)
-    REFERENCES orders (id)  
+-- REFERENCE: ORDERS_DETAILS_ORDERS (TABLE: ORDERS_DETAILS)
+ALTER TABLE ORDERS_DETAILS ADD CONSTRAINT ORDERS_DETAILS_ORDERS
+    FOREIGN KEY (ORDERS_ID)
+    REFERENCES ORDERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_details_products (table: orders_details)
-ALTER TABLE orders_details ADD CONSTRAINT orders_details_products
-    FOREIGN KEY (products_id)
-    REFERENCES products (id)  
+-- REFERENCE: ORDERS_DETAILS_PRODUCTS (TABLE: ORDERS_DETAILS)
+ALTER TABLE ORDERS_DETAILS ADD CONSTRAINT ORDERS_DETAILS_PRODUCTS
+    FOREIGN KEY (PRODUCTS_ID)
+    REFERENCES PRODUCTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_employees_employees (table: orders_employees)
-ALTER TABLE orders_employees ADD CONSTRAINT orders_employees_employees
-    FOREIGN KEY (employees_id)
-    REFERENCES employees (id)  
+-- REFERENCE: ORDERS_EMPLOYEES_EMPLOYEES (TABLE: ORDERS_EMPLOYEES)
+ALTER TABLE ORDERS_EMPLOYEES ADD CONSTRAINT ORDERS_EMPLOYEES_EMPLOYEES
+    FOREIGN KEY (EMPLOYEES_ID)
+    REFERENCES EMPLOYEES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_employees_orders (table: orders_employees)
-ALTER TABLE orders_employees ADD CONSTRAINT orders_employees_orders
-    FOREIGN KEY (orders_id)
-    REFERENCES orders (id)  
+-- REFERENCE: ORDERS_EMPLOYEES_ORDERS (TABLE: ORDERS_EMPLOYEES)
+ALTER TABLE ORDERS_EMPLOYEES ADD CONSTRAINT ORDERS_EMPLOYEES_ORDERS
+    FOREIGN KEY (ORDERS_ID)
+    REFERENCES ORDERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_shippers_orders (table: orders_shippers)
-ALTER TABLE orders_shippers ADD CONSTRAINT orders_shippers_orders
-    FOREIGN KEY (orders_id)
-    REFERENCES orders (id)  
+-- REFERENCE: ORDERS_SHIPPERS_ORDERS (TABLE: ORDERS_SHIPPERS)
+ALTER TABLE ORDERS_SHIPPERS ADD CONSTRAINT ORDERS_SHIPPERS_ORDERS
+    FOREIGN KEY (ORDERS_ID)
+    REFERENCES ORDERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: orders_shippers_shippers (table: orders_shippers)
-ALTER TABLE orders_shippers ADD CONSTRAINT orders_shippers_shippers
-    FOREIGN KEY (shippers_id)
-    REFERENCES shippers (id)  
+-- REFERENCE: ORDERS_SHIPPERS_SHIPPERS (TABLE: ORDERS_SHIPPERS)
+ALTER TABLE ORDERS_SHIPPERS ADD CONSTRAINT ORDERS_SHIPPERS_SHIPPERS
+    FOREIGN KEY (SHIPPERS_ID)
+    REFERENCES SHIPPERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: phones_contacts (table: phones)
-ALTER TABLE phones ADD CONSTRAINT phones_contacts
-    FOREIGN KEY (contacts_id)
-    REFERENCES contacts (id)  
+-- REFERENCE: PHONES_CONTACTS (TABLE: PHONES)
+ALTER TABLE PHONES ADD CONSTRAINT PHONES_CONTACTS
+    FOREIGN KEY (CONTACTS_ID)
+    REFERENCES CONTACTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: pictures_categories_categories (table: pictures_categories)
-ALTER TABLE pictures_categories ADD CONSTRAINT pictures_categories_categories
-    FOREIGN KEY (categories_id)
-    REFERENCES categories (id)  
+-- REFERENCE: PICTURES_CATEGORIES_CATEGORIES (TABLE: PICTURES_CATEGORIES)
+ALTER TABLE PICTURES_CATEGORIES ADD CONSTRAINT PICTURES_CATEGORIES_CATEGORIES
+    FOREIGN KEY (CATEGORIES_ID)
+    REFERENCES CATEGORIES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: pictures_categories_pictures (table: pictures_categories)
-ALTER TABLE pictures_categories ADD CONSTRAINT pictures_categories_pictures
-    FOREIGN KEY (pictures_id)
-    REFERENCES pictures (id)  
+-- REFERENCE: PICTURES_CATEGORIES_PICTURES (TABLE: PICTURES_CATEGORIES)
+ALTER TABLE PICTURES_CATEGORIES ADD CONSTRAINT PICTURES_CATEGORIES_PICTURES
+    FOREIGN KEY (PICTURES_ID)
+    REFERENCES PICTURES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: pictures_employees_employees (table: pictures_employees)
-ALTER TABLE pictures_employees ADD CONSTRAINT pictures_employees_employees
-    FOREIGN KEY (employees_id)
-    REFERENCES employees (id)  
+-- REFERENCE: PICTURES_EMPLOYEES_EMPLOYEES (TABLE: PICTURES_EMPLOYEES)
+ALTER TABLE PICTURES_EMPLOYEES ADD CONSTRAINT PICTURES_EMPLOYEES_EMPLOYEES
+    FOREIGN KEY (EMPLOYEES_ID)
+    REFERENCES EMPLOYEES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: pictures_employees_pictures (table: pictures_employees)
-ALTER TABLE pictures_employees ADD CONSTRAINT pictures_employees_pictures
-    FOREIGN KEY (pictures_id)
-    REFERENCES pictures (id)  
+-- REFERENCE: PICTURES_EMPLOYEES_PICTURES (TABLE: PICTURES_EMPLOYEES)
+ALTER TABLE PICTURES_EMPLOYEES ADD CONSTRAINT PICTURES_EMPLOYEES_PICTURES
+    FOREIGN KEY (PICTURES_ID)
+    REFERENCES PICTURES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: pictures_products_pictures (table: pictures_products)
-ALTER TABLE pictures_products ADD CONSTRAINT pictures_products_pictures
-    FOREIGN KEY (pictures_id)
-    REFERENCES pictures (id)  
+-- REFERENCE: PICTURES_PRODUCTS_PICTURES (TABLE: PICTURES_PRODUCTS)
+ALTER TABLE PICTURES_PRODUCTS ADD CONSTRAINT PICTURES_PRODUCTS_PICTURES
+    FOREIGN KEY (PICTURES_ID)
+    REFERENCES PICTURES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: pictures_products_products (table: pictures_products)
-ALTER TABLE pictures_products ADD CONSTRAINT pictures_products_products
-    FOREIGN KEY (products_id)
-    REFERENCES products (id)  
+-- REFERENCE: PICTURES_PRODUCTS_PRODUCTS (TABLE: PICTURES_PRODUCTS)
+ALTER TABLE PICTURES_PRODUCTS ADD CONSTRAINT PICTURES_PRODUCTS_PRODUCTS
+    FOREIGN KEY (PRODUCTS_ID)
+    REFERENCES PRODUCTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: products_categories (table: products)
-ALTER TABLE products ADD CONSTRAINT products_categories
-    FOREIGN KEY (categories_id)
-    REFERENCES categories (id)  
+-- REFERENCE: PRODUCTS_CATEGORIES (TABLE: PRODUCTS)
+ALTER TABLE PRODUCTS ADD CONSTRAINT PRODUCTS_CATEGORIES
+    FOREIGN KEY (CATEGORIES_ID)
+    REFERENCES CATEGORIES (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: products_suppliers (table: products)
-ALTER TABLE products ADD CONSTRAINT products_suppliers
-    FOREIGN KEY (suppliers_id)
-    REFERENCES suppliers (id)  
+-- REFERENCE: PRODUCTS_SUPPLIERS (TABLE: PRODUCTS)
+ALTER TABLE PRODUCTS ADD CONSTRAINT PRODUCTS_SUPPLIERS
+    FOREIGN KEY (SUPPLIERS_ID)
+    REFERENCES SUPPLIERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: shippers_contacts_contacts (table: shippers_contacts)
-ALTER TABLE shippers_contacts ADD CONSTRAINT shippers_contacts_contacts
-    FOREIGN KEY (contacts_id)
-    REFERENCES contacts (id)  
+-- REFERENCE: SHIPPERS_CONTACTS_CONTACTS (TABLE: SHIPPERS_CONTACTS)
+ALTER TABLE SHIPPERS_CONTACTS ADD CONSTRAINT SHIPPERS_CONTACTS_CONTACTS
+    FOREIGN KEY (CONTACTS_ID)
+    REFERENCES CONTACTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: shippers_contacts_shippers (table: shippers_contacts)
-ALTER TABLE shippers_contacts ADD CONSTRAINT shippers_contacts_shippers
-    FOREIGN KEY (shippers_id)
-    REFERENCES shippers (id)  
+-- REFERENCE: SHIPPERS_CONTACTS_SHIPPERS (TABLE: SHIPPERS_CONTACTS)
+ALTER TABLE SHIPPERS_CONTACTS ADD CONSTRAINT SHIPPERS_CONTACTS_SHIPPERS
+    FOREIGN KEY (SHIPPERS_ID)
+    REFERENCES SHIPPERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: stock_details_products (table: stock_details)
-ALTER TABLE stock_details ADD CONSTRAINT stock_details_products
-    FOREIGN KEY (products_id)
-    REFERENCES products (id)  
+-- REFERENCE: STOCK_DETAILS_PRODUCTS (TABLE: STOCK_DETAILS)
+ALTER TABLE STOCK_DETAILS ADD CONSTRAINT STOCK_DETAILS_PRODUCTS
+    FOREIGN KEY (PRODUCTS_ID)
+    REFERENCES PRODUCTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: stock_details_stock (table: stock_details)
-ALTER TABLE stock_details ADD CONSTRAINT stock_details_stock
-    FOREIGN KEY (stock_id)
-    REFERENCES stock (id)  
+-- REFERENCE: STOCK_DETAILS_STOCK (TABLE: STOCK_DETAILS)
+ALTER TABLE STOCK_DETAILS ADD CONSTRAINT STOCK_DETAILS_STOCK
+    FOREIGN KEY (STOCK_ID)
+    REFERENCES STOCK (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: suppliers_contacts_contacts (table: suppliers_contacts)
-ALTER TABLE suppliers_contacts ADD CONSTRAINT suppliers_contacts_contacts
-    FOREIGN KEY (contacts_id)
-    REFERENCES contacts (id)  
+-- REFERENCE: SUPPLIERS_CONTACTS_CONTACTS (TABLE: SUPPLIERS_CONTACTS)
+ALTER TABLE SUPPLIERS_CONTACTS ADD CONSTRAINT SUPPLIERS_CONTACTS_CONTACTS
+    FOREIGN KEY (CONTACTS_ID)
+    REFERENCES CONTACTS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- Reference: suppliers_contacts_suppliers (table: suppliers_contacts)
-ALTER TABLE suppliers_contacts ADD CONSTRAINT suppliers_contacts_suppliers
-    FOREIGN KEY (suppliers_id)
-    REFERENCES suppliers (id)  
+-- REFERENCE: SUPPLIERS_CONTACTS_SUPPLIERS (TABLE: SUPPLIERS_CONTACTS)
+ALTER TABLE SUPPLIERS_CONTACTS ADD CONSTRAINT SUPPLIERS_CONTACTS_SUPPLIERS
+    FOREIGN KEY (SUPPLIERS_ID)
+    REFERENCES SUPPLIERS (ID)  
     NOT DEFERRABLE 
     INITIALLY IMMEDIATE
 ;
 
--- End of file.
+-- END OF FILE.
+
 
