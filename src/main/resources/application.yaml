@@ -44,4 +44,4 @@ logging:
     br.edu.ipog.br.edu.ipog.ecommerce.northwind: info
     org.springframework.web: info
     org:
-      hibernate.type: trace #Qualquer parâmetro que houver na instrução SQL será exibido no console.
+      hibernate.type: info #Qualquer parâmetro que houver na instrução SQL será exibido no console.

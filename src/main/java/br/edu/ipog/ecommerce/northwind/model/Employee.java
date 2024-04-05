@@ -22,4 +22,8 @@ public class Employee {
     @Column(name = "RESIGNATION_DATE")
     private LocalDateTime resignationDate;
 
+    //Relacionamento 1 para 1
+    @OneToOne(mappedBy = "employee")
+    private EmployeeDetail detail;
+
 }

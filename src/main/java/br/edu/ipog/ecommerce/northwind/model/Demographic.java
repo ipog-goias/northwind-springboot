@@ -16,13 +16,17 @@ public class Demographic {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "LONG", precision = 12, scale = 8,  nullable = false)
-    //@Column(name="LONG", columnDefinition="Decimal(12,8) default '0.00'")
-    private Float longitude;
+    @Column(name = "LONG", precision = 12, scale = 8,  nullable = false) //BigDecimal
+    private BigDecimal longitude;
 
-    @Column(name = "LAT", precision = 12, scale = 8,  nullable = false)
+    //@Column(name="LONG", columnDefinition="Decimal(12,8) default '0.00'")
+    //private Double longitude;
+
+    @Column(name = "LAT", precision = 12, scale = 8,  nullable = false)  //BigDecimal
+    private BigDecimal lat;
+
     //@Column(name="LAT", columnDefinition="Decimal(12,8) default '0.00'")
-    private Float lat;
+    //private Double lat;
 
     @Column(name = "DESCRIPTION", length = 150)
     private String description;
