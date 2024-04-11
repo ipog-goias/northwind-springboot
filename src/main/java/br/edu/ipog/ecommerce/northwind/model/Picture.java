@@ -15,5 +15,4 @@ public class Picture {
 
     @Column(name = "PATH", columnDefinition = "TEXT", nullable = false)
     private String path;
-
 }
