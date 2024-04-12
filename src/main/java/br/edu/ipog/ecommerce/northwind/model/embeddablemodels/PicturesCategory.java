@@ -27,12 +27,12 @@ public class PicturesCategory {
 
     //Relacionamentos @ManyToOne
     @ManyToOne
-    @MapsId("idPicture") //Este nome deve corresponder ao nome do atributo em PictureCategoryId
+    @MapsId("pictureId") //Este nome deve corresponder ao nome do atributo em PictureCategoryId
     @JoinColumn(name = "picture_id")
     private Picture picture;
 
     @ManyToOne
-    @MapsId("idCategory") //Este nome deve corresponder ao nome do atributo em PictureCategoryId
+    @MapsId("categoryId") //Este nome deve corresponder ao nome do atributo em PictureCategoryId
     @JoinColumn(name = "category_id")
     private Category category;
 

@@ -23,7 +23,7 @@ import java.io.Serializable;
  */
 public class PictureCategoryId implements Serializable {
 
-    private Integer idCategory;
+    private Integer categoryId;
 
-    private Integer idPicture;
+    private Integer pictureId;
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -21,6 +22,11 @@ public class Employee {
 
     @Column(name = "RESIGNATION_DATE")
     private LocalDateTime resignationDate;
+
+    //Auto-relacionamento
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private List<Employee> children;
 
     //Relacionamento 1 para 1
     @OneToOne(mappedBy = "employee")

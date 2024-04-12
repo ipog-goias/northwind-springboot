@@ -25,7 +25,7 @@ import java.io.Serializable;
  */
 public class PictureEmployeeId implements Serializable {
 
-    private Integer idPicture;
+    private Integer pictureId;
 
-    private Integer idEmployee;
+    private Integer employeeId;
 }

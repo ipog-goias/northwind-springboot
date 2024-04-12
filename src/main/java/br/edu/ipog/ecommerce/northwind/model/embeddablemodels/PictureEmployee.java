@@ -24,12 +24,12 @@ public class PictureEmployee {
 
     //Fazer relacionamentos N-1 (@ManyToOne)
     @ManyToOne
-    @MapsId("idPicture") //Verificar id da chave composta PictureEmployeeId
+    @MapsId("pictureId") //Verificar id da chave composta PictureEmployeeId
     @JoinColumn(name = "pictures_id")
     private Picture picture;
 
     @ManyToOne
-    @MapsId("idEmployee") //Verificar id da chave composta PictureEmployeeId
+    @MapsId("employeeId") //Verificar id da chave composta PictureEmployeeId
     @JoinColumn(name = "emplyees_id")
     private Employee employee;
 }
