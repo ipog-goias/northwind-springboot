@@ -10,4 +10,9 @@ class NorthwindApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void xpto(){
+
+	}
+
 }
