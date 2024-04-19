@@ -1,7 +1,10 @@
 package br.edu.ipog.ecommerce.northwind.model;
 
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.PicturesCategory;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -22,5 +25,16 @@ public class Category {
     //@Lob //armazenda 'binário no banco de dados'
     @Column(name = "PICTURE", nullable = false)
     private byte[] picture;
+
+    /*
+    //TODO Tipo de relacionamento que  NÃO PRECISA FAZER
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<PicturesCategory> picturesCategoryList;
+    */
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "category",
+            orphanRemoval = true)
+    private List<Product> productList;
 
 }

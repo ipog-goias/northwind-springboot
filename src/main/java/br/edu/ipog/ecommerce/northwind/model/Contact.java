@@ -1,15 +1,15 @@
 package br.edu.ipog.ecommerce.northwind.model;
 
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.*;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-
 @Data
 @Entity
-@Table(name = "CONTACT")
+@Table(name = "CONTACTS")
 public class Contact {
 
     @Id
@@ -22,6 +22,23 @@ public class Contact {
 
     @Column(name = "CLOSE_REGISTER")
     private LocalDateTime closeRegister;
+
+    /*
+    //TODO Tipo de relacionamento que  NÃO PRECISA FAZER
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<EmployeeContact> employeeContactList;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ShipperContact> shipperContactList;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<CustomerContact> customerContactList;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<SupplierContact> supplierContactList;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderContact> orderContactList;*/
 
     //Relacionamentos
     @OneToMany(cascade =  CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
@@ -39,11 +56,4 @@ public class Contact {
     @OneToMany(cascade =  CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
     private List<Address> addresses;
-
-
-
-
-
-
-
 }

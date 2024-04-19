@@ -1,9 +1,12 @@
 package br.edu.ipog.ecommerce.northwind.model;
 
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.OrderShipper;
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.ShipperContact;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,4 +26,10 @@ public class Shipper {
 
     @Column(name = "CLOSE_REGISTER")
     private LocalDateTime closeRegister;
+
+    /*
+    //TODO Tipo de relacionamento que  NÃO PRECISA FAZER
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ShipperContact> shipperContactList;
+     */
 }

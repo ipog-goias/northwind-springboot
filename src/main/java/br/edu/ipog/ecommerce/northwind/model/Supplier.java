@@ -1,9 +1,12 @@
 package br.edu.ipog.ecommerce.northwind.model;
 
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.CustomerContact;
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.SupplierContact;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,5 +26,16 @@ public class Supplier {
 
     @Column(name = "CLOSE_REGISTER")
     private LocalDateTime closeRegister;
+
+    @OneToMany(mappedBy = "supplier",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<Product> productList;
+
+    /*
+    //TODO Tipo de relacionamento que  NÃO PRECISA FAZER
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<SupplierContact> supplierContactList;
+     */
 
 }

@@ -1,5 +1,7 @@
 package br.edu.ipog.ecommerce.northwind.model;
 
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.EmployeeContact;
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.OrderShipper;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -31,5 +33,9 @@ public class Employee {
     //Relacionamento 1 para 1
     @OneToOne(mappedBy = "employee")
     private EmployeeDetail detail;
+
+    //TODO Tipo de relacionamento que  NÃO PRECISA FAZER
+    /*@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<EmployeeContact> employeeContactList;*/
 
 }

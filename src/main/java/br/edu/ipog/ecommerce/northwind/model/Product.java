@@ -1,7 +1,11 @@
 package br.edu.ipog.ecommerce.northwind.model;
 
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.OrderDetail;
+import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.StockDetail;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -15,5 +19,23 @@ public class Product {
 
     @Column(name = "NAME", length = 150)
     private String name;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Category category;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Supplier supplier;
+
+    /*
+    //TODO Tipo de relacionamento que  NÃO PRECISA FAZER
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<StockDetail> stockDetailList;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<OrderDetail> orderDetailList;
+
+     */
+
+
 
 }

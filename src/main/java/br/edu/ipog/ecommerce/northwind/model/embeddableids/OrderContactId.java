@@ -15,10 +15,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class OrderContactId implements Serializable {
 
-    private Order orderId;
+    private Integer orderId;
 
-    private Contact contactId;
-
-
+    private Integer contactId;
 
 }
