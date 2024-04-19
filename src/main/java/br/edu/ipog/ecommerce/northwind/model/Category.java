@@ -2,13 +2,17 @@ package br.edu.ipog.ecommerce.northwind.model;
 
 import br.edu.ipog.ecommerce.northwind.model.embeddablemodels.PicturesCategory;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
 @Entity
 @Table(name = "CATEGORIES")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Category {
 
     @Id
@@ -36,5 +40,10 @@ public class Category {
             mappedBy = "category",
             orphanRemoval = true)
     private List<Product> productList;
+
+    public Category(Integer id, String name){
+        this.id = id;
+        this.name = name;
+    }
 
 }
