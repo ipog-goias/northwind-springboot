@@ -1,11 +1,13 @@
 package br.edu.ipog.ecommerce.northwind.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 @Entity
 @Table(name = "ADDRESSES")
 public class Address {

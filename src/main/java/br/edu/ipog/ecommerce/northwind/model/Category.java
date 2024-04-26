@@ -30,6 +30,9 @@ public class Category {
     @Column(name = "PICTURE", nullable = false)
     private byte[] picture;
 
+    @Column(name = "ACTIVE", nullable = false)
+    private Boolean active;
+
     /*
     //TODO Tipo de relacionamento que  NÃO PRECISA FAZER
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
@@ -44,6 +47,12 @@ public class Category {
     public Category(Integer id, String name){
         this.id = id;
         this.name = name;
+    }
+
+    public Category(Integer id, String name, List<Product> productList){
+        this.id = id;
+        this.name = name;
+        this.productList = productList;
     }
 
 }

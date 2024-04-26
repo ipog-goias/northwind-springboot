@@ -24,7 +24,7 @@ spring:
   # Database
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://172.17.0.2:5432/northwind_db
+    url: jdbc:postgresql://172.17.0.2:5432/postgres
     username: postgres
     password: 123456
 
@@ -37,6 +37,10 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
     generate-ddl: true #Cria DDDL (Crias a instruções de criação/alteração de tabela)
+
+  flyway:
+    baseline-on-migrate: true
+    validate-on-migrate: false
 
 #Logging
 logging:
